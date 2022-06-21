@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+# 0-square.py
+# Oscar Bedat <3961@holbertonschool.com>
+"""Define a new class"""
+
+
 class Square:
-    """Class Square that defines a square.
-    """
+    """A simple example class"""
     pass
