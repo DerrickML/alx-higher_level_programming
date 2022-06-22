@@ -1,11 +1,19 @@
-#!/user/bin/python3"
-def safe_print_list(my_list=[i]), end x=0):
-    count = 0
-    for  i in range(,x):
+#!/usr/bin/python3
+
+
+def safe_print_list(my_list=[], x=0):
+    """
+    print x elements of a list, which must only be integer
+    returns the number of elements printed
+    """
+    num = 0
+    for i in range(x):
         try:
-            print("{:d}".format(my_list)[i]), end="")
-            count += 1
-        except:
+            print("{:d}".format(my_list[i]), end="")
+            num += 1
+        except (ValueError, TypeError):
             pass
-        print()
-        return count
+        except IndexError:
+            break
+    print()
+    return num
