@@ -1,89 +1,52 @@
 #!/usr/bin/python3
-""" defines a Rectangle class"""
+'''Module for N Queens problem.'''
 
 
-class Rectangle:
-    """Rectangle Class"""
-    number_of_instances = 0
-    print_symbol = '#'
+def isSafe(board, row, col):
+    '''Checks if position is safe from attack.
 
-    def __init__(self, width=0, height=0):
-        """ Init Method """
-        self.width = width
-        self.height = height
-        Rectangle.number_of_instances += 1
+    Args:
+        board: The board state.
+        row: The row to check.
+        col: The colum to check.
+    '''
+    for c in range(col):
+        if board[c] is row or abs(board[c] - row) is abs(c - col):
+            return False
+    return True
 
-    @property
-    def width(self):
-        """getter def"""
-        return self.__width
 
-    @width.setter
-    def width(self, value):
-        """setter def"""
-        if type(value) is not int:
-            raise TypeError('width must be an integer')
-        if value < 0:
-            raise ValueError('width must be >= 0')
-        self.__width = value
+def checkBoard(board, col):
+    '''Checks the board state column by column using backtracking.
 
-    @property
-    def height(self):
-        """getter def"""
-        return self.__height
+    Args:
+        board: The board state.
+        col: The current colum to check.
+    '''
+    n = len(board)
+    if col is n:
+        print(str([[c, board[c]] for c in range(n)]))
+        return
 
-    @height.setter
-    def height(self, value):
-        """setter def"""
-        if type(value) is not int:
-            raise TypeError('height must be an integer')
-        if value < 0:
-            raise ValueError('height must be >= 0')
-        self.__height = value
+    for row in range(n):
+        if isSafe(board, row, col):
+            board[col] = row
+            checkBoard(board, col + 1)
 
-    def area(self):
-        """define area def"""
-        return self.__width * self.__height
+if __name__ == "__main__":
+    import sys
 
-    def perimeter(self):
-        """define perimeter def"""
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return(self.__width * 2) + (self.__height * 2)
-
-    def __str__(self):
-        """define informal print str"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        else:
-            hsh = str(self.print_symbol)
-            return ((hsh*self.__width + "\n")*self.__height)[:-1]
-
-    def __repr__(self):
-        """define official print repr"""
-        return 'Rectangle({}, {})'.format(self.__width, self.__height)
-
-    def __del__(self):
-        """define delete method"""
-        Rectangle.number_of_instances -= 1
-        print('Bye rectangle...')
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """
-            Biggest Rectangle (Rectangle)
-        """
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        Area1 = rect_1.area()
-        Area2 = rect_2.area()
-        if Area1 >= Area2:
-            return rect_1
-        return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """ Returns a new Rectangle instance """
-        return (cls(size, size))
+    if len(sys.argv) != 2:
+        print("Usage: nqueens N")
+        sys.exit(1)
+    n = 0
+    try:
+        n = int(sys.argv[1])
+    except:
+        print("N must be a number")
+        sys.exit(1)
+    if n < 4:
+        print("N must be at least 4")
+        sys.exit(1)
+    board = [0 for col in range(n)]
+    checkBoard(board, 0)
