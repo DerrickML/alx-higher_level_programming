@@ -1,34 +1,54 @@
-#include <stdio.h>
-#include <string.h>
-#include <Python.h>
+#!/usr/bin/python3
 
-/**
- * print_python_string - Prints string information
- *
- * @p: Python Object
- * Return: no return
- */
-void print_python_string(PyObject *p)
-{
+"""This is the "2-matrix_divided.py" module.
+This module supplies one function, matrix_divided(matrix, div)"""
 
-	PyObject *str, *repr;
 
-	(void)repr;
-	printf("[.] string object info\n");
+def matrix_divided(matrix, div):
+    """
+    Divides all elements of the matrix by div
+    """
 
-	if (strcmp(p->ob_type->tp_name, "str"))
-	{
-		printf("  [ERROR] Invalid String Object\n");
-		return;
-	}
+    if not isinstance(div, int) and not isinstance(div, float):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("div must be a number")
 
-	if (PyUnicode_IS_COMPACT_ASCII(p))
-		printf("  type: compact ascii\n");
-	else
-		printf("  type: compact unicode object\n");
+    if matrix is None:
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
+    elif len(matrix) == 0:
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
+    elif len(matrix[0]) == 0:
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats")
+    else:
+        rows = len(matrix)
+        colums = len(matrix[0])
 
-	repr = PyObject_Repr(p);
-	str = PyUnicode_AsEncodedString(p, "utf-8", "~E~");
-	printf("  length: %ld\n", PyUnicode_GET_SIZE(p));
-	printf("  value: %s\n", PyBytes_AsString(str));
-}
+        new_matrix = [[0 for i in range(colums)] for j in range(rows)]
+        # print(new_matrix)
+
+        for r in range(rows):
+            for c in range(colums):
+                n = matrix[r][c]
+
+                if not isinstance(n, int) and not isinstance(n, float):
+                    raise TypeError(
+                        "matrix must be a matrix (list of lists) of \
+                            integers/floats")
+                else:
+                    new_matrix[r][c] = float("%0.2f" % (n / div))
+
+        return new_matrix
+
+
+if __name__ == "__main__":
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6]
+    ]
+
+    print(matrix_divided(matrix, 3))
+    print(matrix)
