@@ -24,4 +24,4 @@ All of the following folders are projects done during the studies:
 | [`0x07-python-test_driven_development`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x07-python-test_driven_development) | It aims to learn about docstrings to create and implement tests in **Python** |
 | [`0x08-python-more_classes`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x08-python-more_classes) | It aims to learn about object oriented programming (OOP), Data Abstraction, Data Encapsulation, instances and classes attributes in **Python** |
 | [`0x0A-python-inheritance`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x0A-python-inheritance) | It aims to learn about inheritance, superclass, baseclass and subclass in **Python** |
-
+| [`0x0B-python-input_output`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x0B-python-input_output) | It aims to learn how to open, read, write and append files from a script in **Python** |
