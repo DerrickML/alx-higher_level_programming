@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 11-student.
+"""Module 9-student.
 Creates a Student class.
 """
 

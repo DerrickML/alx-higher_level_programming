@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 6-from_json_string.
+"""Module 4-from_json_string.
 Returns an object (Python data structure)
 represented by a JSON string.
 """
