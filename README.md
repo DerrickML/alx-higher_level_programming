@@ -4,9 +4,6 @@ Module of **High-level programming** and **Python**, carried out during **Full S
 ## Technologies
 * Shell Scripts are written in Bash 5.0.17(1)
 * Python Scripts are written with Python 3.10
-* `MySQL 8.0` (version 8.0-rc)
-* `MySQLdb`, version 1.3.10
-* `sqlalchemy`, version 1.2.3
 * Tested on Ubuntu 20.04 LTS
 
 ## Projects
@@ -25,3 +22,4 @@ All of the following folders are projects done during the studies:
 | [`0x08-python-more_classes`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x08-python-more_classes) | It aims to learn about object oriented programming (OOP), Data Abstraction, Data Encapsulation, instances and classes attributes in **Python** |
 | [`0x0A-python-inheritance`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x0A-python-inheritance) | It aims to learn about inheritance, superclass, baseclass and subclass in **Python** |
 | [`0x0B-python-input_output`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x0B-python-input_output) | It aims to learn how to open, read, write and append files from a script in **Python** |
+| [`0x0C-python-almost_a_circle`](https://github.com/DeroMal/alx-higher_level_programming/tree/master/0x0C-python-almost_a_circle) | It aims to learn about unit testing, serialization, deserialization, JSON, `args` and `kwargs` in **Python** |
