@@ -1,9 +1,12 @@
 #!/usr/bin/node
-exports.dict = {
-  89: 1,
-  90: 2,
-  91: 1,
-  92: 3,
-  93: 1,
-  94: 2
-};
+const dict = require('./101-data').dict;
+const newDict = {};
+
+Object.keys(dict).map(function (key, index) {
+  if (newDict[dict[key]] === undefined) {
+    newDict[dict[key]] = [];
+  }
+  newDict[dict[key]].push(key);
+});
+
+console.log(newDict);
