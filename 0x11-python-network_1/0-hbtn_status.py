@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Python script that fetches https://intranet.hbtn.io/status """
+""" Python script that fetches https://alx-intranet.hbtn.io/status """
 import urllib.request
 
 if __name__ == "__main__":
-    alx_url = 'https://intranet.hbtn.io/status'
+    alx_url = 'https://alx-intranet.hbtn.io/status'
     with urllib.request.urlopen(alx_url) as response:
         html = response.read()
         print('Body response:')

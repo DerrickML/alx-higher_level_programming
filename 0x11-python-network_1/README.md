@@ -3,11 +3,11 @@
 ## Table of contents
 Files | Description
 ----- | -----------
-[0-hbtn_status.py](./0-hbtn_status.py) | Python script that fetches https://intranet.hbtn.io/status with the urllib package
+[0-hbtn_status.py](./0-hbtn_status.py) | Python script that fetches https://alx-intranet.hbtn.io/status with the urllib package
 [1-hbtn_header.py](./1-hbtn_header.py) | Python script that takes in a URL, sends a request to the URL and displays the value of the X-Request-Id variable found in the header of the response
 [2-post_email.py](./2-post_email.py) | Python script that takes in a URL and an email, sends a POST request to the passed URL with the email as a parameter, and displays the body of the response (decoded in utf-8)
 [3-error_code.py](./3-error_code.py) | Python script that takes in a URL, sends a request to the URL and displays the body of the response (decoded in utf-8)
-[4-hbtn_status.py](./4-hbtn_status.py) | Python script that fetches https://intranet.hbtn.io/status with the requests package
+[4-hbtn_status.py](./4-hbtn_status.py) | Python script that fetches https://alx-intranet.hbtn.io/status with the requests package
 [5-hbtn_header.py](./5-hbtn_header.py) | Python script that takes in a URL, sends a request to the URL and displays the value of the variable X-Request-Id in the response header
 [6-post_email.py](./6-post_email.py) | Python script that takes in a URL and an email address, sends a POST request to the passed URL with the email as a parameter, and finally displays the body of the response
 [7-error_code.py](./7-error_code.py) | Python script that takes in a URL, sends a request to the URL and displays the body of the response
